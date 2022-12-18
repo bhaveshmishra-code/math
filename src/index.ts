@@ -11,7 +11,7 @@ let color = `#000`;
 
 const canvas = document.getElementById("canvas") as HTMLCanvasElement;
 const ctx = canvas.getContext("2d")!;
-const size = 400;
+const size = 500;
 canvas.style.width = `${size}px`;
 canvas.style.height = `${size}px`;
 
@@ -26,6 +26,12 @@ const p2 = new Point(350, 350);
 const p3 = new Point(80, 50);
 
 const t1 = new Triangle(p1, p2, p3, "#ef4444");
+const areaDiv = document.getElementById("area")!;
+const lengthDiv = document.getElementById("length")!;
+const angleDiv = document.getElementById("angle")!;
+areaDiv.innerText = "Area: " + t1.area.toString();
+lengthDiv.innerText = "Length: " + t1.sideLength.join(",");
+angleDiv.innerText = "Angle: " + t1.angles.join(",");
 
 function init() {
   t1.draw(ctx);
@@ -34,6 +40,10 @@ function init() {
     y = e.clientY;
     t1.C.x = x;
     t1.C.y = y;
+    console.log(t1.area);
+    areaDiv.innerText = "Area: " + t1.area.toString();
+    lengthDiv.innerText = "Length: " + t1.sideLength.join(",");
+    angleDiv.innerText = "Angle: " + t1.angles.join(",");
   });
   draw();
 }
