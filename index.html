@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Canvas tutorial</title>
-    <script src="main.js"></script>
-    <script>
-      function init() {
-        window.requestAnimationFrame(clock);
-      }
-    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webpack & TypeScript</title>
     <style>
       canvas {
-        border: 1px solid black;
+        border: 1px solid orange;
       }
     </style>
   </head>
-  <body onload="init()">
-    <canvas id="tutorial" width="150" height="150"></canvas>
+  <body>
+    <canvas id="canvas"></canvas>
+
+    <!-- add scripts here -->
+    <script src="./public/bundle.js"></script>
   </body>
 </html>
